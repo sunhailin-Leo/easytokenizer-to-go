@@ -61,6 +61,4 @@ jobs:
         with:
           max_attempts: 3
           timeout_minutes: 15
-          command: |
-            export LD_LIBRARY_PATH=/home/runner/work/lib:$LD_LIBRARY_PATH
-            go test ./... -v -race
+          command: go test ./... -v -race
