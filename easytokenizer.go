@@ -68,7 +68,22 @@ func (t *EasyTokenizer) EncodeWithIds(text string, maxSeqLength int) ([]int32, [
 	defer C.free(unsafe.Pointer(tokenTypeIds))
 	defer C.free(unsafe.Pointer(attentionMask))
 	defer C.free(unsafe.Pointer(offsets))
-	return sliceInputIds, sliceTokenTypeIds, sliceAttentionMask, sliceOffsets
+
+	goInputIds := make([]int32, numInputIds)
+	goTokenTypeIds := make([]int32, numTokenTypeIds)
+	goAttentionMask := make([]int32, numAttentionMask)
+	for i := 0; i < int(numInputIds); i++ {
+		goInputIds[i] = sliceInputIds[i]
+		goTokenTypeIds[i] = sliceTokenTypeIds[i]
+		goAttentionMask[i] = sliceAttentionMask[i]
+	}
+
+	goOffsets := make([]int32, numOffsets)
+	for i := 0; i < int(numOffsets); i++ {
+		goOffsets[i] = sliceOffsets[i]
+	}
+
+	return goInputIds, goTokenTypeIds, goAttentionMask, goOffsets
 }
 
 func (t *EasyTokenizer) WordPieceTokenize(text string) ([]string, []int32) {
@@ -91,6 +106,10 @@ func (t *EasyTokenizer) WordPieceTokenize(text string) ([]string, []int32) {
 	for i := 0; i < int(numTokens); i++ {
 		goTokens[i] = C.GoString(sliceTokens[i])
 	}
-	sliceTokens = nil
-	return goTokens, sliceOffsets
+	// parse string offsets
+	goOffsets := make([]int32, numOffsets)
+	for i := 0; i < int(numOffsets); i++ {
+		goOffsets[i] = sliceOffsets[i]
+	}
+	return goTokens, goOffsets
 }

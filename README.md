@@ -5,6 +5,11 @@ Golang binding for https://github.com/zejunwang1/easytokenizer
 
 ### Version
 
+* version 0.2.0
+  * Fix `EncodeWithIds`, `WordPieceTokenize` API return error result.
+  * Add Github Workflows.
+  * Update test code.
+
 * version 0.1.0
   * Finish API `initTokenizer`, `encode`, `encodeWithIds`, `wordPieceTokenize` in CGO.
   * Finish API `NewTokenizer`, `Close`, `Encode`, `EncodeWithIds`, `WordPieceTokenize` in Golang.
