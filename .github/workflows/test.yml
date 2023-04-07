@@ -54,7 +54,7 @@ jobs:
           cd build
           cmake ..
           make
-          make install
+          sudo make install
           ls
       - name: Run Test
         uses: nick-fields/retry@v2

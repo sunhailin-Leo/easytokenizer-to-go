@@ -32,7 +32,7 @@ jobs:
           cd build
           cmake ..
           make
-          make install
+          sudo make install
           ls
       - name: Run Benchmark
         run: |
