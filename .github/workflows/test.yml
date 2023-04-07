@@ -46,12 +46,23 @@ jobs:
             ${{ runner.os }}-go-${{ matrix.go-version }}-
       - name: Fetch Repository
         uses: actions/checkout@v3
-      - name: Configure CMake
-        run: cmake -B ${{github.workspace}}/build -DCMAKE_INSTALL_PREFIX=${{github.workspace}}
       - name: Build C++ Library
-        run: cmake --build ${{github.workspace}}/build
+        run: |
+          cd ${{ github.workspace }}
+          ls
+          mkdir build
+          cd build
+          cmake --version
+          cmake -DCMAKE_INSTALL_PREFIX=${{ github.workspace }} ../
+          ls
       - name: Install C++ Library
-        run: cd build && make install
+        env:
+          prefix: ${{ github.workspace }}
+        run: |
+          cd ${{ github.workspace }}/build
+          ls
+          make
+          make install
       - name: Run Test
         uses: nick-fields/retry@v2
         with:
