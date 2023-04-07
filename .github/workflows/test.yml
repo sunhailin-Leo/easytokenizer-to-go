@@ -46,28 +46,21 @@ jobs:
             ${{ runner.os }}-go-${{ matrix.go-version }}-
       - name: Fetch Repository
         uses: actions/checkout@v3
-      - name: Build C++ Library
+      - name: Build And Install C++ Library
         run: |
-          cd ${{ github.workspace }}
-          ls
+          cmake --version
+          cd ${{github.workspace}}
           mkdir build
           cd build
-          cmake --version
-          cmake -DCMAKE_INSTALL_PREFIX=${{ github.workspace }} ../
-          ls
-      - name: Install C++ Library
-        env:
-          prefix: ${{ github.workspace }}
-        run: |
-          cd ${{ github.workspace }}/build
-          ls
+          cmake ..
           make
           make install
+          ls
       - name: Run Test
         uses: nick-fields/retry@v2
         with:
           max_attempts: 3
           timeout_minutes: 15
           command: |
-            export LD_LIBRARY_PATH=${{ github.workspace }}/lib:$LD_LIBRARY_PATH
+            export LD_LIBRARY_PATH=/home/runner/work/lib:$LD_LIBRARY_PATH
             go test ./... -v -race
