@@ -69,5 +69,5 @@ jobs:
           max_attempts: 3
           timeout_minutes: 15
           command: |
-            export LD_LIBRARY_PATH=${{ github.workspace }}:$LD_LIBRARY_PATH
+            export LD_LIBRARY_PATH=${{ github.workspace }}/lib:$LD_LIBRARY_PATH
             go test ./... -v -race
