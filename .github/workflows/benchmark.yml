@@ -27,7 +27,7 @@ jobs:
       - name: Fetch Repository
         uses: actions/checkout@v3
       - name: Configure CMake
-        run: cmake -B ${{github.workspace}}/build -DCMAKE_INSTALL_PREFIX=/home/runner/work/
+        run: cmake -B ${{github.workspace}}/build -DCMAKE_INSTALL_PREFIX=${{github.workspace}}
       - name: Build C++ Library
         run: cmake --build ${{github.workspace}}/build
       - name: Install C++ Library
