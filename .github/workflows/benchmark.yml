@@ -42,7 +42,9 @@ jobs:
           make
           make install
       - name: Run Benchmark
-        run: set -o pipefail; go test ./... -benchmem -run=^$ -bench . | tee output.txt
+        run: |
+          export LD_LIBRARY_PATH=${{ github.workspace }}:$LD_LIBRARY_PATH
+          set -o pipefail; go test ./... -benchmem -run=^$ -bench . | tee output.txt
       - name: Get Previous Benchmark Results
         uses: actions/cache@v3
         with:
