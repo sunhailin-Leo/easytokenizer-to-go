@@ -61,4 +61,7 @@ jobs:
         with:
           max_attempts: 3
           timeout_minutes: 15
-          command: go test ./... -v -race
+          command: |
+            ls /usr/local/lib | grep libtokenizer
+            export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
+            go test ./... -v -race
