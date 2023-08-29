@@ -18,4 +18,4 @@ jobs:
         uses: golangci/golangci-lint-action@v3
         with:
           version: v1.54.2
-          args: --enable=nolintlint,gochecknoinits,bodyclose --verbose
+          args: --enable=nolintlint,gochecknoinits,bodyclose,gofumpt --verbose

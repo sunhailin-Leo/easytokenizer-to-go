@@ -1,9 +1,12 @@
 package tokenizer
 
-// #cgo CXXFLAGS: -std=c++11
-// #cgo LDFLAGS: -L${SRCDIR} -ltokenizer -lm
-// #include "easytokenizer_wrapper.h"
+/*
+#cgo CXXFLAGS: -std=c++11
+#cgo LDFLAGS: -L${SRCDIR} -ltokenizer -lm
+#include "easytokenizer_wrapper.h"
+*/
 import "C"
+
 import (
 	"unsafe"
 )
