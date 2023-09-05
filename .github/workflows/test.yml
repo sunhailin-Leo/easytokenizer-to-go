@@ -45,7 +45,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-go-${{ matrix.go-version }}-
       - name: Fetch Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Build And Install C++ Library
         run: |
           cmake --version
