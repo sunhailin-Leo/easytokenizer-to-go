@@ -16,6 +16,9 @@ Golang binding for https://github.com/zejunwang1/easytokenizer
 
 ### Version
 
+* version 0.2.1
+  * Update some free function. 
+
 * version 0.2.0
   * Fix `EncodeWithIds`, `WordPieceTokenize` API return error result.
   * Add Github Workflows.
