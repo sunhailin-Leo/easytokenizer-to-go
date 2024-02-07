@@ -23,7 +23,7 @@ jobs:
         with:
           go-version: ${{ matrix.go-version }}
       - name: Setup cmake
-        uses: jwlawson/actions-setup-cmake@v1.14
+        uses: jwlawson/actions-setup-cmake@v2.0
         with:
           cmake-version: '3.26.x'
       - name: Check cmake
