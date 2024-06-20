@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1718855890380,
+  "lastUpdate": 1718855916790,
   "repoUrl": "https://github.com/sunhailin-Leo/easytokenizer-to-go",
   "entries": {
     "Benchmark": [
@@ -2724,6 +2724,174 @@ window.BENCHMARK_DATA = {
             "value": 40,
             "unit": "allocs/op",
             "extra": "121707 times\n4 procs"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "379978424@qq.com",
+            "name": "LeoSun",
+            "username": "sunhailin-Leo"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "cc03809938adfbbd53f7d0e9eca3cc7bd05148ff",
+          "message": "Merge pull request #23 from sunhailin-Leo/dependabot/github_actions/benchmark-action/github-action-benchmark-1.20.3\n\nBump benchmark-action/github-action-benchmark from 1.20.1 to 1.20.3",
+          "timestamp": "2024-06-20T11:57:33+08:00",
+          "tree_id": "a8c7e91deb7be70f4bbc1ebd753e6612f817e4f2",
+          "url": "https://github.com/sunhailin-Leo/easytokenizer-to-go/commit/cc03809938adfbbd53f7d0e9eca3cc7bd05148ff"
+        },
+        "date": 1718855916383,
+        "tool": "go",
+        "benches": [
+          {
+            "name": "BenchmarkChineseEncode",
+            "value": 1523,
+            "unit": "ns/op\t     192 B/op\t       1 allocs/op",
+            "extra": "777016 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkChineseEncode - ns/op",
+            "value": 1523,
+            "unit": "ns/op",
+            "extra": "777016 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkChineseEncode - B/op",
+            "value": 192,
+            "unit": "B/op",
+            "extra": "777016 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkChineseEncode - allocs/op",
+            "value": 1,
+            "unit": "allocs/op",
+            "extra": "777016 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkChineseEncodeWithIds",
+            "value": 2347,
+            "unit": "ns/op\t     752 B/op\t      12 allocs/op",
+            "extra": "490248 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkChineseEncodeWithIds - ns/op",
+            "value": 2347,
+            "unit": "ns/op",
+            "extra": "490248 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkChineseEncodeWithIds - B/op",
+            "value": 752,
+            "unit": "B/op",
+            "extra": "490248 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkChineseEncodeWithIds - allocs/op",
+            "value": 12,
+            "unit": "allocs/op",
+            "extra": "490248 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkChineseWordPieceTokenize",
+            "value": 2851,
+            "unit": "ns/op\t     440 B/op\t      21 allocs/op",
+            "extra": "403230 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkChineseWordPieceTokenize - ns/op",
+            "value": 2851,
+            "unit": "ns/op",
+            "extra": "403230 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkChineseWordPieceTokenize - B/op",
+            "value": 440,
+            "unit": "B/op",
+            "extra": "403230 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkChineseWordPieceTokenize - allocs/op",
+            "value": 21,
+            "unit": "allocs/op",
+            "extra": "403230 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkThaiEncode",
+            "value": 7452,
+            "unit": "ns/op\t     256 B/op\t       1 allocs/op",
+            "extra": "163814 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkThaiEncode - ns/op",
+            "value": 7452,
+            "unit": "ns/op",
+            "extra": "163814 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkThaiEncode - B/op",
+            "value": 256,
+            "unit": "B/op",
+            "extra": "163814 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkThaiEncode - allocs/op",
+            "value": 1,
+            "unit": "allocs/op",
+            "extra": "163814 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkThaiEncodeWithIds",
+            "value": 8340,
+            "unit": "ns/op\t    1104 B/op\t      12 allocs/op",
+            "extra": "138214 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkThaiEncodeWithIds - ns/op",
+            "value": 8340,
+            "unit": "ns/op",
+            "extra": "138214 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkThaiEncodeWithIds - B/op",
+            "value": 1104,
+            "unit": "B/op",
+            "extra": "138214 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkThaiEncodeWithIds - allocs/op",
+            "value": 12,
+            "unit": "allocs/op",
+            "extra": "138214 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkThaiWordPieceTokenize",
+            "value": 10221,
+            "unit": "ns/op\t    1056 B/op\t      40 allocs/op",
+            "extra": "123882 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkThaiWordPieceTokenize - ns/op",
+            "value": 10221,
+            "unit": "ns/op",
+            "extra": "123882 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkThaiWordPieceTokenize - B/op",
+            "value": 1056,
+            "unit": "B/op",
+            "extra": "123882 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkThaiWordPieceTokenize - allocs/op",
+            "value": 40,
+            "unit": "allocs/op",
+            "extra": "123882 times\n4 procs"
           }
         ]
       }
