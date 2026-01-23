@@ -19,7 +19,7 @@ jobs:
         with:
           go-version: 1.21.x
       - name: Setup cmake
-        uses: jwlawson/actions-setup-cmake@v2.0
+        uses: jwlawson/actions-setup-cmake@v2.1
         with:
           cmake-version: '3.26.x'
       - name: Fetch Repository
