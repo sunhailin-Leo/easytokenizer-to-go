@@ -64,4 +64,6 @@ jobs:
           command: |
             ls /usr/local/lib | grep libtokenizer
             export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
+            export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/usr/local/lib
+            export CGO_LDFLAGS="-L/usr/local/lib -Wl,-rpath,/usr/local/lib"
             go test ./... -v -race
