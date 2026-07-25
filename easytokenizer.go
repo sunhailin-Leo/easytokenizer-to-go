@@ -26,12 +26,14 @@ func NewTokenizer(vocabPath string, doLowerCase bool) *EasyTokenizer {
 	// just true
 	tokenizer.codePointLevel = true
 	// initTokenizer
-	tokenizer.easyTokenizer = C.initTokenizer(C.CString(vocabPath), C.bool(tokenizer.doLowerCase), C.bool(tokenizer.codePointLevel))
+	cVocabPath := C.CString(vocabPath)
+	defer C.free(unsafe.Pointer(cVocabPath))
+	tokenizer.easyTokenizer = C.initTokenizer(cVocabPath, C.bool(tokenizer.doLowerCase), C.bool(tokenizer.codePointLevel))
 	return &tokenizer
 }
 
 func (t *EasyTokenizer) Close() {
-	C.free(unsafe.Pointer(t.easyTokenizer))
+	C.deleteTokenizer(t.easyTokenizer)
 	t.easyTokenizer = nil
 }
 

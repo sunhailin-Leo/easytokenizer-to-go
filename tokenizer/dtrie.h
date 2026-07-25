@@ -118,8 +118,7 @@ class DTrie
       auto data = text.data();
       size_t cur = 0, len = text.size();
       std::vector<std::pair<size_t, std::string>> result;
-      std::vector<result_type> result_pairs;
-      result_pairs.reserve(max_prefix_matches);
+      std::vector<result_type> result_pairs(max_prefix_matches);
       while (cur < len)
       {
         size_t n = _da->commonPrefixSearch(data + cur, result_pairs.data(),
@@ -143,8 +142,7 @@ class DTrie
     max_prefix(const std::string& text, size_t max_prefix_matches = 128) const
     {
       std::string result;
-      std::vector<result_type> result_pairs;
-      result_pairs.reserve(max_prefix_matches);
+      std::vector<result_type> result_pairs(max_prefix_matches);
       size_t n = _da->commonPrefixSearch(text.data(), result_pairs.data(),
           max_prefix_matches, text.size());
       if (n < 1)

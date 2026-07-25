@@ -11,6 +11,10 @@ EasyTokenizer initTokenizer(char* vocab_path, bool do_lower_case, bool codepoint
     return (void *) tk;
 }
 
+void deleteTokenizer(EasyTokenizer tokenizer) {
+    delete static_cast<tokenizer::Tokenizer *>(tokenizer);
+}
+
 void encode(EasyTokenizer tokenizer, char* text, bool add_cls_sep, bool truncation, int max_length, int* output_data) {
     auto data = ((tokenizer::Tokenizer *) tokenizer)->encode(text, add_cls_sep, truncation, max_length);
 
