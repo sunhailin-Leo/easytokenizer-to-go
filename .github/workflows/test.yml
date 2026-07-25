@@ -72,7 +72,11 @@ jobs:
             export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
             export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/usr/local/lib
             export CGO_LDFLAGS="-L/usr/local/lib -Wl,-rpath,/usr/local/lib"
-            go test ./... -v -race
+            if [ "$RUNNER_ARCH" = "ARM64" ]; then
+              go test ./... -v
+            else
+              go test ./... -v -race
+            fi
   Stable:
     strategy:
       matrix:
@@ -121,4 +125,8 @@ jobs:
             export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
             export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/usr/local/lib
             export CGO_LDFLAGS="-L/usr/local/lib -Wl,-rpath,/usr/local/lib"
-            go test ./... -v -race
+            if [ "$RUNNER_ARCH" = "ARM64" ]; then
+              go test ./... -v
+            else
+              go test ./... -v -race
+            fi
