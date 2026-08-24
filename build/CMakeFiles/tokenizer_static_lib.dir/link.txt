@@ -1,2 +1,0 @@
-/usr/bin/ar qc libtokenizer.a CMakeFiles/tokenizer_static_lib.dir/tokenizer/tokenizer.cc.o CMakeFiles/tokenizer_static_lib.dir/tokenizer/utf8proc.c.o
-/usr/bin/ranlib libtokenizer.a
