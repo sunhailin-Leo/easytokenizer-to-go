@@ -1,0 +1,9 @@
+/home/runner/work/easytokenizer-to-go/easytokenizer-to-go/build/CMakeFiles/tokenizer_static_lib.dir
+/home/runner/work/easytokenizer-to-go/easytokenizer-to-go/build/CMakeFiles/tokenizer_shared_lib.dir
+/home/runner/work/easytokenizer-to-go/easytokenizer-to-go/build/CMakeFiles/tokenizer.dir
+/home/runner/work/easytokenizer-to-go/easytokenizer-to-go/build/CMakeFiles/edit_cache.dir
+/home/runner/work/easytokenizer-to-go/easytokenizer-to-go/build/CMakeFiles/rebuild_cache.dir
+/home/runner/work/easytokenizer-to-go/easytokenizer-to-go/build/CMakeFiles/list_install_components.dir
+/home/runner/work/easytokenizer-to-go/easytokenizer-to-go/build/CMakeFiles/install.dir
+/home/runner/work/easytokenizer-to-go/easytokenizer-to-go/build/CMakeFiles/install/local.dir
+/home/runner/work/easytokenizer-to-go/easytokenizer-to-go/build/CMakeFiles/install/strip.dir

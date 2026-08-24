@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC  -Wall -O3 -fPIC -funroll-loops -Wl,--dependency-file=CMakeFiles/tokenizer.dir/link.d -shared -Wl,-soname,libtokenizer.so -o libtokenizer.so CMakeFiles/tokenizer.dir/easytokenizer_wrapper.cc.o  libtokenizer.a -lpthread
