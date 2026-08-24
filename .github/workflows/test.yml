@@ -87,6 +87,8 @@ jobs:
         uses: jwlawson/actions-setup-cmake@v2.1
         with:
           cmake-version: '3.26.x'
+      - name: Fetch Repository
+        uses: actions/checkout@v7
       - name: Setup Golang caches
         uses: actions/cache@v5
         with:
@@ -98,8 +100,6 @@ jobs:
           key: ${{ runner.os }}-go-stable-${{ hashFiles('**/go.sum') }}
           restore-keys: |
             ${{ runner.os }}-go-stable-
-      - name: Fetch Repository
-        uses: actions/checkout@v7
       - name: Build And Install C++ Library
         run: |
           mkdir -p build
