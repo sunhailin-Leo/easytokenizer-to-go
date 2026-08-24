@@ -33,6 +33,12 @@ Golang binding for https://github.com/zejunwang1/easytokenizer
 * Linux/MacOS
 	* `sh build.sh`
 
+### Supported Platforms and Go Versions
+
+* Linux (`ubuntu-latest`) and macOS 13 (`macos-13`)
+* Go 1.18 and later
+* The newest stable Go release is tested continuously
+
 ### Usage
 
 * When building golang program, please add `export CGO_CXXFLAGS=-std=c++11` command before `go build / run / test ...`

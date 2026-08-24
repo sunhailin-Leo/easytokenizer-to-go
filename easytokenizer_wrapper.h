@@ -10,6 +10,8 @@ typedef void *EasyTokenizer;
 
 EasyTokenizer initTokenizer(char* vocab_path, bool do_lower_case, bool codepoint_level);
 
+void deleteTokenizer(EasyTokenizer tokenizer);
+
 void encode(EasyTokenizer tokenizer, char* text, bool add_cls_sep, bool truncation, int max_length, int* output_data);
 
 void encodeWithIds(
