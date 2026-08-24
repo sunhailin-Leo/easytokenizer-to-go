@@ -35,7 +35,7 @@ Golang binding for https://github.com/zejunwang1/easytokenizer
 
 ### Supported Platforms and Go Versions
 
-* Linux (`ubuntu-latest`), macOS 13, and current macOS (`macos-latest`)
+* Linux (`ubuntu-latest`) and macOS 13 (`macos-13`)
 * Go 1.18 and later
 * The newest stable Go release is tested continuously
 
