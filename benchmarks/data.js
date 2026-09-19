@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1782054196383,
+  "lastUpdate": 1789837699213,
   "repoUrl": "https://github.com/sunhailin-Leo/easytokenizer-to-go",
   "entries": {
     "Benchmark": [
@@ -7092,6 +7092,534 @@ window.BENCHMARK_DATA = {
             "value": 40,
             "unit": "allocs/op",
             "extra": "114525 times\n4 procs"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "shjkfld379978424@gmail.com",
+            "name": "LeoSun",
+            "username": "sunhailin-Leo"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "f6bce2c10a6330bf71ff0af93655d016762179e2",
+          "message": "Merge pull request #68 from sunhailin-Leo/codex/v0.3.0-pure-go-simd\n\nv0.3.0: replace the cgo binding with a pure Go implementation",
+          "timestamp": "2026-09-20T01:06:49+08:00",
+          "tree_id": "68e44eb3a1b72825ec9ddfe7b9dcd4c024772e2f",
+          "url": "https://github.com/sunhailin-Leo/easytokenizer-to-go/commit/f6bce2c10a6330bf71ff0af93655d016762179e2"
+        },
+        "date": 1789837698660,
+        "tool": "go",
+        "benches": [
+          {
+            "name": "BenchmarkScanAlnumRun (github.com/sunhailin-Leo/easytokenizer-to-go)",
+            "value": 124,
+            "unit": "ns/op\t       0 B/op\t       0 allocs/op",
+            "extra": "9563360 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScanAlnumRun (github.com/sunhailin-Leo/easytokenizer-to-go) - ns/op",
+            "value": 124,
+            "unit": "ns/op",
+            "extra": "9563360 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScanAlnumRun (github.com/sunhailin-Leo/easytokenizer-to-go) - B/op",
+            "value": 0,
+            "unit": "B/op",
+            "extra": "9563360 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScanAlnumRun (github.com/sunhailin-Leo/easytokenizer-to-go) - allocs/op",
+            "value": 0,
+            "unit": "allocs/op",
+            "extra": "9563360 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScanAlnumRunShort (github.com/sunhailin-Leo/easytokenizer-to-go)",
+            "value": 15.4,
+            "unit": "ns/op\t       0 B/op\t       0 allocs/op",
+            "extra": "77806342 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScanAlnumRunShort (github.com/sunhailin-Leo/easytokenizer-to-go) - ns/op",
+            "value": 15.4,
+            "unit": "ns/op",
+            "extra": "77806342 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScanAlnumRunShort (github.com/sunhailin-Leo/easytokenizer-to-go) - B/op",
+            "value": 0,
+            "unit": "B/op",
+            "extra": "77806342 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScanAlnumRunShort (github.com/sunhailin-Leo/easytokenizer-to-go) - allocs/op",
+            "value": 0,
+            "unit": "allocs/op",
+            "extra": "77806342 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScanAllASCIIAlnum (github.com/sunhailin-Leo/easytokenizer-to-go)",
+            "value": 5.428,
+            "unit": "ns/op\t       0 B/op\t       0 allocs/op",
+            "extra": "224258830 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScanAllASCIIAlnum (github.com/sunhailin-Leo/easytokenizer-to-go) - ns/op",
+            "value": 5.428,
+            "unit": "ns/op",
+            "extra": "224258830 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScanAllASCIIAlnum (github.com/sunhailin-Leo/easytokenizer-to-go) - B/op",
+            "value": 0,
+            "unit": "B/op",
+            "extra": "224258830 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScanAllASCIIAlnum (github.com/sunhailin-Leo/easytokenizer-to-go) - allocs/op",
+            "value": 0,
+            "unit": "allocs/op",
+            "extra": "224258830 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScanCountCodepointsASCII (github.com/sunhailin-Leo/easytokenizer-to-go)",
+            "value": 165.5,
+            "unit": "ns/op\t       0 B/op\t       0 allocs/op",
+            "extra": "7255656 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScanCountCodepointsASCII (github.com/sunhailin-Leo/easytokenizer-to-go) - ns/op",
+            "value": 165.5,
+            "unit": "ns/op",
+            "extra": "7255656 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScanCountCodepointsASCII (github.com/sunhailin-Leo/easytokenizer-to-go) - B/op",
+            "value": 0,
+            "unit": "B/op",
+            "extra": "7255656 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScanCountCodepointsASCII (github.com/sunhailin-Leo/easytokenizer-to-go) - allocs/op",
+            "value": 0,
+            "unit": "allocs/op",
+            "extra": "7255656 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScanCountCodepointsCJK (github.com/sunhailin-Leo/easytokenizer-to-go)",
+            "value": 101.6,
+            "unit": "ns/op\t       0 B/op\t       0 allocs/op",
+            "extra": "11804767 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScanCountCodepointsCJK (github.com/sunhailin-Leo/easytokenizer-to-go) - ns/op",
+            "value": 101.6,
+            "unit": "ns/op",
+            "extra": "11804767 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScanCountCodepointsCJK (github.com/sunhailin-Leo/easytokenizer-to-go) - B/op",
+            "value": 0,
+            "unit": "B/op",
+            "extra": "11804767 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScanCountCodepointsCJK (github.com/sunhailin-Leo/easytokenizer-to-go) - allocs/op",
+            "value": 0,
+            "unit": "allocs/op",
+            "extra": "11804767 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScanCountCodepointsShort (github.com/sunhailin-Leo/easytokenizer-to-go)",
+            "value": 5.616,
+            "unit": "ns/op\t       0 B/op\t       0 allocs/op",
+            "extra": "213519116 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScanCountCodepointsShort (github.com/sunhailin-Leo/easytokenizer-to-go) - ns/op",
+            "value": 5.616,
+            "unit": "ns/op",
+            "extra": "213519116 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScanCountCodepointsShort (github.com/sunhailin-Leo/easytokenizer-to-go) - B/op",
+            "value": 0,
+            "unit": "B/op",
+            "extra": "213519116 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScanCountCodepointsShort (github.com/sunhailin-Leo/easytokenizer-to-go) - allocs/op",
+            "value": 0,
+            "unit": "allocs/op",
+            "extra": "213519116 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScanNextSpecialStart (github.com/sunhailin-Leo/easytokenizer-to-go)",
+            "value": 5.942,
+            "unit": "ns/op\t       0 B/op\t       0 allocs/op",
+            "extra": "201532509 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScanNextSpecialStart (github.com/sunhailin-Leo/easytokenizer-to-go) - ns/op",
+            "value": 5.942,
+            "unit": "ns/op",
+            "extra": "201532509 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScanNextSpecialStart (github.com/sunhailin-Leo/easytokenizer-to-go) - B/op",
+            "value": 0,
+            "unit": "B/op",
+            "extra": "201532509 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScanNextSpecialStart (github.com/sunhailin-Leo/easytokenizer-to-go) - allocs/op",
+            "value": 0,
+            "unit": "allocs/op",
+            "extra": "201532509 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScanNextSpecialStartScalar (github.com/sunhailin-Leo/easytokenizer-to-go)",
+            "value": 164.4,
+            "unit": "ns/op\t       0 B/op\t       0 allocs/op",
+            "extra": "7262326 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScanNextSpecialStartScalar (github.com/sunhailin-Leo/easytokenizer-to-go) - ns/op",
+            "value": 164.4,
+            "unit": "ns/op",
+            "extra": "7262326 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScanNextSpecialStartScalar (github.com/sunhailin-Leo/easytokenizer-to-go) - B/op",
+            "value": 0,
+            "unit": "B/op",
+            "extra": "7262326 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScanNextSpecialStartScalar (github.com/sunhailin-Leo/easytokenizer-to-go) - allocs/op",
+            "value": 0,
+            "unit": "allocs/op",
+            "extra": "7262326 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScanNextSpecialStartHit (github.com/sunhailin-Leo/easytokenizer-to-go)",
+            "value": 6.585,
+            "unit": "ns/op\t       0 B/op\t       0 allocs/op",
+            "extra": "181717288 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScanNextSpecialStartHit (github.com/sunhailin-Leo/easytokenizer-to-go) - ns/op",
+            "value": 6.585,
+            "unit": "ns/op",
+            "extra": "181717288 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScanNextSpecialStartHit (github.com/sunhailin-Leo/easytokenizer-to-go) - B/op",
+            "value": 0,
+            "unit": "B/op",
+            "extra": "181717288 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScanNextSpecialStartHit (github.com/sunhailin-Leo/easytokenizer-to-go) - allocs/op",
+            "value": 0,
+            "unit": "allocs/op",
+            "extra": "181717288 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScanNextSpecialStartHitScalar (github.com/sunhailin-Leo/easytokenizer-to-go)",
+            "value": 166.2,
+            "unit": "ns/op\t       0 B/op\t       0 allocs/op",
+            "extra": "7203386 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScanNextSpecialStartHitScalar (github.com/sunhailin-Leo/easytokenizer-to-go) - ns/op",
+            "value": 166.2,
+            "unit": "ns/op",
+            "extra": "7203386 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScanNextSpecialStartHitScalar (github.com/sunhailin-Leo/easytokenizer-to-go) - B/op",
+            "value": 0,
+            "unit": "B/op",
+            "extra": "7203386 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScanNextSpecialStartHitScalar (github.com/sunhailin-Leo/easytokenizer-to-go) - allocs/op",
+            "value": 0,
+            "unit": "allocs/op",
+            "extra": "7203386 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScanNextSpecialStartShort (github.com/sunhailin-Leo/easytokenizer-to-go)",
+            "value": 3.746,
+            "unit": "ns/op\t       0 B/op\t       0 allocs/op",
+            "extra": "320150445 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScanNextSpecialStartShort (github.com/sunhailin-Leo/easytokenizer-to-go) - ns/op",
+            "value": 3.746,
+            "unit": "ns/op",
+            "extra": "320150445 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScanNextSpecialStartShort (github.com/sunhailin-Leo/easytokenizer-to-go) - B/op",
+            "value": 0,
+            "unit": "B/op",
+            "extra": "320150445 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScanNextSpecialStartShort (github.com/sunhailin-Leo/easytokenizer-to-go) - allocs/op",
+            "value": 0,
+            "unit": "allocs/op",
+            "extra": "320150445 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScanNextSpecialStartShortScalar (github.com/sunhailin-Leo/easytokenizer-to-go)",
+            "value": 5.988,
+            "unit": "ns/op\t       0 B/op\t       0 allocs/op",
+            "extra": "198741944 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScanNextSpecialStartShortScalar (github.com/sunhailin-Leo/easytokenizer-to-go) - ns/op",
+            "value": 5.988,
+            "unit": "ns/op",
+            "extra": "198741944 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScanNextSpecialStartShortScalar (github.com/sunhailin-Leo/easytokenizer-to-go) - B/op",
+            "value": 0,
+            "unit": "B/op",
+            "extra": "198741944 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkScanNextSpecialStartShortScalar (github.com/sunhailin-Leo/easytokenizer-to-go) - allocs/op",
+            "value": 0,
+            "unit": "allocs/op",
+            "extra": "198741944 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkChineseEncode (github.com/sunhailin-Leo/easytokenizer-to-go/test)",
+            "value": 1623,
+            "unit": "ns/op\t    1320 B/op\t       9 allocs/op",
+            "extra": "790240 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkChineseEncode (github.com/sunhailin-Leo/easytokenizer-to-go/test) - ns/op",
+            "value": 1623,
+            "unit": "ns/op",
+            "extra": "790240 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkChineseEncode (github.com/sunhailin-Leo/easytokenizer-to-go/test) - B/op",
+            "value": 1320,
+            "unit": "B/op",
+            "extra": "790240 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkChineseEncode (github.com/sunhailin-Leo/easytokenizer-to-go/test) - allocs/op",
+            "value": 9,
+            "unit": "allocs/op",
+            "extra": "790240 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkChineseEncodeWithIds (github.com/sunhailin-Leo/easytokenizer-to-go/test)",
+            "value": 1750,
+            "unit": "ns/op\t    1704 B/op\t      11 allocs/op",
+            "extra": "663741 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkChineseEncodeWithIds (github.com/sunhailin-Leo/easytokenizer-to-go/test) - ns/op",
+            "value": 1750,
+            "unit": "ns/op",
+            "extra": "663741 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkChineseEncodeWithIds (github.com/sunhailin-Leo/easytokenizer-to-go/test) - B/op",
+            "value": 1704,
+            "unit": "B/op",
+            "extra": "663741 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkChineseEncodeWithIds (github.com/sunhailin-Leo/easytokenizer-to-go/test) - allocs/op",
+            "value": 11,
+            "unit": "allocs/op",
+            "extra": "663741 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkChineseWordPieceTokenize (github.com/sunhailin-Leo/easytokenizer-to-go/test)",
+            "value": 1556,
+            "unit": "ns/op\t    1304 B/op\t       8 allocs/op",
+            "extra": "719724 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkChineseWordPieceTokenize (github.com/sunhailin-Leo/easytokenizer-to-go/test) - ns/op",
+            "value": 1556,
+            "unit": "ns/op",
+            "extra": "719724 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkChineseWordPieceTokenize (github.com/sunhailin-Leo/easytokenizer-to-go/test) - B/op",
+            "value": 1304,
+            "unit": "B/op",
+            "extra": "719724 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkChineseWordPieceTokenize (github.com/sunhailin-Leo/easytokenizer-to-go/test) - allocs/op",
+            "value": 8,
+            "unit": "allocs/op",
+            "extra": "719724 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkThaiEncode (github.com/sunhailin-Leo/easytokenizer-to-go/test)",
+            "value": 5483,
+            "unit": "ns/op\t    3144 B/op\t      16 allocs/op",
+            "extra": "214881 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkThaiEncode (github.com/sunhailin-Leo/easytokenizer-to-go/test) - ns/op",
+            "value": 5483,
+            "unit": "ns/op",
+            "extra": "214881 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkThaiEncode (github.com/sunhailin-Leo/easytokenizer-to-go/test) - B/op",
+            "value": 3144,
+            "unit": "B/op",
+            "extra": "214881 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkThaiEncode (github.com/sunhailin-Leo/easytokenizer-to-go/test) - allocs/op",
+            "value": 16,
+            "unit": "allocs/op",
+            "extra": "214881 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkThaiEncodeWithIds (github.com/sunhailin-Leo/easytokenizer-to-go/test)",
+            "value": 5707,
+            "unit": "ns/op\t    3656 B/op\t      18 allocs/op",
+            "extra": "201488 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkThaiEncodeWithIds (github.com/sunhailin-Leo/easytokenizer-to-go/test) - ns/op",
+            "value": 5707,
+            "unit": "ns/op",
+            "extra": "201488 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkThaiEncodeWithIds (github.com/sunhailin-Leo/easytokenizer-to-go/test) - B/op",
+            "value": 3656,
+            "unit": "B/op",
+            "extra": "201488 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkThaiEncodeWithIds (github.com/sunhailin-Leo/easytokenizer-to-go/test) - allocs/op",
+            "value": 18,
+            "unit": "allocs/op",
+            "extra": "201488 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkThaiWordPieceTokenize (github.com/sunhailin-Leo/easytokenizer-to-go/test)",
+            "value": 5949,
+            "unit": "ns/op\t    4184 B/op\t      15 allocs/op",
+            "extra": "196935 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkThaiWordPieceTokenize (github.com/sunhailin-Leo/easytokenizer-to-go/test) - ns/op",
+            "value": 5949,
+            "unit": "ns/op",
+            "extra": "196935 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkThaiWordPieceTokenize (github.com/sunhailin-Leo/easytokenizer-to-go/test) - B/op",
+            "value": 4184,
+            "unit": "B/op",
+            "extra": "196935 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkThaiWordPieceTokenize (github.com/sunhailin-Leo/easytokenizer-to-go/test) - allocs/op",
+            "value": 15,
+            "unit": "allocs/op",
+            "extra": "196935 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkEnglishEncode (github.com/sunhailin-Leo/easytokenizer-to-go/test)",
+            "value": 14773,
+            "unit": "ns/op\t    9096 B/op\t      19 allocs/op",
+            "extra": "81052 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkEnglishEncode (github.com/sunhailin-Leo/easytokenizer-to-go/test) - ns/op",
+            "value": 14773,
+            "unit": "ns/op",
+            "extra": "81052 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkEnglishEncode (github.com/sunhailin-Leo/easytokenizer-to-go/test) - B/op",
+            "value": 9096,
+            "unit": "B/op",
+            "extra": "81052 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkEnglishEncode (github.com/sunhailin-Leo/easytokenizer-to-go/test) - allocs/op",
+            "value": 19,
+            "unit": "allocs/op",
+            "extra": "81052 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkEnglishEncodeWithIds (github.com/sunhailin-Leo/easytokenizer-to-go/test)",
+            "value": 15582,
+            "unit": "ns/op\t   10120 B/op\t      21 allocs/op",
+            "extra": "77911 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkEnglishEncodeWithIds (github.com/sunhailin-Leo/easytokenizer-to-go/test) - ns/op",
+            "value": 15582,
+            "unit": "ns/op",
+            "extra": "77911 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkEnglishEncodeWithIds (github.com/sunhailin-Leo/easytokenizer-to-go/test) - B/op",
+            "value": 10120,
+            "unit": "B/op",
+            "extra": "77911 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkEnglishEncodeWithIds (github.com/sunhailin-Leo/easytokenizer-to-go/test) - allocs/op",
+            "value": 21,
+            "unit": "allocs/op",
+            "extra": "77911 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkEnglishWordPieceTokenize (github.com/sunhailin-Leo/easytokenizer-to-go/test)",
+            "value": 16199,
+            "unit": "ns/op\t   11592 B/op\t      18 allocs/op",
+            "extra": "70050 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkEnglishWordPieceTokenize (github.com/sunhailin-Leo/easytokenizer-to-go/test) - ns/op",
+            "value": 16199,
+            "unit": "ns/op",
+            "extra": "70050 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkEnglishWordPieceTokenize (github.com/sunhailin-Leo/easytokenizer-to-go/test) - B/op",
+            "value": 11592,
+            "unit": "B/op",
+            "extra": "70050 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkEnglishWordPieceTokenize (github.com/sunhailin-Leo/easytokenizer-to-go/test) - allocs/op",
+            "value": 18,
+            "unit": "allocs/op",
+            "extra": "70050 times\n4 procs"
           }
         ]
       }
