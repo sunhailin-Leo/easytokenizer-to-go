@@ -5,17 +5,25 @@ on:
       - main
   pull_request:
 jobs:
-  test:
-    strategy:
-      matrix:
-        go-version: [1.27.x]
-        platform: [ubuntu-latest]
-    runs-on: ${{ matrix.platform }}
+  gosec:
+    runs-on: ubuntu-latest
     env:
       GO111MODULE: on
     steps:
-      - uses: actions/checkout@v7
-      - name: Run Gosec Security Scanner
-        uses: securego/gosec@v2.27.1
+      - name: Fetch Repository
+        uses: actions/checkout@v7
+      - name: Install Go
+        uses: actions/setup-go@v6
         with:
-          args: '-exclude=G103,G104,G115,G304,G402 ./...'
+          go-version: 1.27.x
+          check-latest: true
+      # securego/gosec's published image ships a Go 1.26 toolchain, which
+      # refuses to load a module targeting go 1.27. Building gosec with the
+      # toolchain installed above keeps the scanner and the code it analyses
+      # on the same Go release.
+      - name: Install Gosec
+        run: |
+          export GO111MODULE=on
+          go install github.com/securego/gosec/v2/cmd/gosec@v2.27.1
+      - name: Run Gosec Security Scanner
+        run: "`go env GOPATH`/bin/gosec -exclude=G103,G104,G115,G304,G402 ./..."
