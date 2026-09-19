@@ -10,26 +10,30 @@ on:
     paths:
       - '**'
       - '!**.md'
+env:
+  GO_VERSION: 1.27.x
 jobs:
   Build:
     strategy:
+      # One platform failing should not cancel the remaining ones.
+      fail-fast: false
       matrix:
-        go-version: [1.27.x]
-        platform: [ubuntu-latest, macos-latest]
-        goexperiment: ['']
-        include:
-          - platform: ubuntu-latest
-            go-version: 1.27.x
-            goexperiment: simd
-          - platform: macos-latest
-            go-version: 1.27.x
-            goexperiment: simd
-    runs-on: ${{ matrix.platform }}
+        # Every supported OS/architecture pair. The race detector runtime only
+        # exists for amd64 on Windows, so windows/arm64 runs without -race.
+        platform:
+          - { name: ubuntu-latest, race: '-race' }    # linux/amd64
+          - { name: ubuntu-24.04-arm, race: '-race' } # linux/arm64
+          - { name: windows-latest, race: '-race' }   # windows/amd64
+          - { name: windows-11-arm, race: '' }        # windows/arm64
+          - { name: macos-latest, race: '-race' }     # darwin/arm64
+          - { name: macos-26-intel, race: '-race' }   # darwin/amd64
+        goexperiment: ['', simd]
+    runs-on: ${{ matrix.platform.name }}
     steps:
       - name: Install Go
         uses: actions/setup-go@v6
         with:
-          go-version: ${{ matrix.go-version }}
+          go-version: ${{ env.GO_VERSION }}
       - name: Setup Golang caches
         uses: actions/cache@v5
         with:
@@ -41,12 +45,12 @@ jobs:
             ~/go/pkg/mod
             ~/.cache/go-build
             ~/Library/Caches/go-build
-          key: ${{ runner.os }}-go-${{ matrix.go-version }}-${{ matrix.goexperiment }}-${{ hashFiles('**/go.sum') }}
+          key: ${{ runner.os }}-${{ runner.arch }}-go-${{ env.GO_VERSION }}-${{ matrix.goexperiment }}-${{ hashFiles('**/go.sum') }}
           restore-keys: |
-            ${{ runner.os }}-go-${{ matrix.go-version }}-${{ matrix.goexperiment }}-
+            ${{ runner.os }}-${{ runner.arch }}-go-${{ env.GO_VERSION }}-${{ matrix.goexperiment }}-
       - name: Fetch Repository
         uses: actions/checkout@v7
       - name: Run Test
         env:
           GOEXPERIMENT: ${{ matrix.goexperiment }}
-        run: go test ./... -v -race
+        run: go test ./... -v ${{ matrix.platform.race }}
