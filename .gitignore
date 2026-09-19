@@ -1,0 +1,8 @@
+# Compiled test binaries and coverage output.
+*.test
+*.out
+coverage.txt
+
+# Editor and tooling state.
+.idea/
+.vscode/

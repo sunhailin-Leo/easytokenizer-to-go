@@ -10,24 +10,30 @@ on:
     paths:
       - '**'
       - '!**.md'
+env:
+  GO_VERSION: 1.27.x
 jobs:
   Build:
     strategy:
+      # One platform failing should not cancel the remaining ones.
+      fail-fast: false
       matrix:
-        go-version: [1.18.x, 1.19.x, 1.20.x, 1.21.x, 1.22.x, 1.23.x, 1.24.x, 1.25.x]
-        platform: [ubuntu-latest, macos-latest]
-    runs-on: ${{ matrix.platform }}
+        # Every supported OS/architecture pair. The race detector runtime only
+        # exists for amd64 on Windows, so windows/arm64 runs without -race.
+        platform:
+          - { name: ubuntu-latest, race: '-race' }    # linux/amd64
+          - { name: ubuntu-24.04-arm, race: '-race' } # linux/arm64
+          - { name: windows-latest, race: '-race' }   # windows/amd64
+          - { name: windows-11-arm, race: '' }        # windows/arm64
+          - { name: macos-latest, race: '-race' }     # darwin/arm64
+          - { name: macos-26-intel, race: '-race' }   # darwin/amd64
+        goexperiment: ['', simd]
+    runs-on: ${{ matrix.platform.name }}
     steps:
       - name: Install Go
         uses: actions/setup-go@v6
         with:
-          go-version: ${{ matrix.go-version }}
-      - name: Setup cmake
-        uses: jwlawson/actions-setup-cmake@v2.1
-        with:
-          cmake-version: '3.26.x'
-      - name: Check cmake
-        run: cmake --version
+          go-version: ${{ env.GO_VERSION }}
       - name: Setup Golang caches
         uses: actions/cache@v5
         with:
@@ -35,35 +41,16 @@ jobs:
           # * Module download cache
           # * Build cache (Linux)
           # * Build cache (Mac)
-          # * Build cache (Windows)
           path: |
             ~/go/pkg/mod
             ~/.cache/go-build
             ~/Library/Caches/go-build
-            ~\AppData\Local\go-build
-          key: ${{ runner.os }}-go-${{ matrix.go-version }}-${{ hashFiles('**/go.sum') }}
+          key: ${{ runner.os }}-${{ runner.arch }}-go-${{ env.GO_VERSION }}-${{ matrix.goexperiment }}-${{ hashFiles('**/go.sum') }}
           restore-keys: |
-            ${{ runner.os }}-go-${{ matrix.go-version }}-
+            ${{ runner.os }}-${{ runner.arch }}-go-${{ env.GO_VERSION }}-${{ matrix.goexperiment }}-
       - name: Fetch Repository
         uses: actions/checkout@v7
-      - name: Build And Install C++ Library
-        run: |
-          cmake --version
-          cd ${{github.workspace}}
-          mkdir build
-          cd build
-          cmake ..
-          make
-          sudo make install
-          ls
       - name: Run Test
-        uses: nick-fields/retry@v4
-        with:
-          max_attempts: 3
-          timeout_minutes: 15
-          command: |
-            ls /usr/local/lib | grep libtokenizer
-            export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
-            export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/usr/local/lib
-            export CGO_LDFLAGS="-L/usr/local/lib -Wl,-rpath,/usr/local/lib"
-            go test ./... -v -race
+        env:
+          GOEXPERIMENT: ${{ matrix.goexperiment }}
+        run: go test ./... -v ${{ matrix.platform.race }}

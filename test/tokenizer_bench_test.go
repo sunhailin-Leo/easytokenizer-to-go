@@ -84,3 +84,42 @@ func BenchmarkThaiWordPieceTokenize(b *testing.B) {
 
 	tk.Close()
 }
+
+func BenchmarkEnglishEncode(b *testing.B) {
+	pwd, _ := os.Getwd()
+	tk := tokenizer.NewTokenizer(pwd+"/"+testChineseVocabFilename, true)
+
+	b.ResetTimer()
+	b.ReportAllocs()
+	for i := 0; i < b.N; i++ {
+		tk.Encode(testEnglishText, 128)
+	}
+
+	tk.Close()
+}
+
+func BenchmarkEnglishEncodeWithIds(b *testing.B) {
+	pwd, _ := os.Getwd()
+	tk := tokenizer.NewTokenizer(pwd+"/"+testChineseVocabFilename, true)
+
+	b.ResetTimer()
+	b.ReportAllocs()
+	for i := 0; i < b.N; i++ {
+		tk.EncodeWithIds(testEnglishText, 128)
+	}
+
+	tk.Close()
+}
+
+func BenchmarkEnglishWordPieceTokenize(b *testing.B) {
+	pwd, _ := os.Getwd()
+	tk := tokenizer.NewTokenizer(pwd+"/"+testChineseVocabFilename, true)
+
+	b.ResetTimer()
+	b.ReportAllocs()
+	for i := 0; i < b.N; i++ {
+		tk.WordPieceTokenize(testEnglishText)
+	}
+
+	tk.Close()
+}

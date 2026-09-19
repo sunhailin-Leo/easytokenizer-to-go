@@ -13,6 +13,11 @@ const (
 
 	testChineseText  string = "广东省深圳市南山区腾讯滨海大厦"
 	testThaiLanguage string = "นครปฐม เมืองนครปฐม ถนนขาด เลขที่ 69 หมู่ 1 ซ. - - ถ. -"
+	testEnglishText  string = "Natural language processing with transformer models has become the dominant approach " +
+		"for a wide range of tasks. Pre-training on large corpora followed by fine-tuning on " +
+		"downstream datasets yields strong results, but the computational cost of training remains " +
+		"substantial. Tokenization is the first step of the pipeline and it must be both fast and " +
+		"faithful to the original text, including punctuation, casing and unknown words."
 )
 
 func testChineseTokenizer() {
