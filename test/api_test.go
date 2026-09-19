@@ -109,6 +109,27 @@ func TestConstructorErrors(t *testing.T) {
 	}
 }
 
+// TestCRLFVocabulary loads the same vocabulary with Windows line endings. The
+// C++ reader opened the file in text mode, so std::getline never saw the '\r';
+// keeping it turns every token of such a file into a miss.
+func TestCRLFVocabulary(t *testing.T) {
+	crlfData := strings.ReplaceAll(string(smallVocab()["vocab.txt"].Data), "\n", "\r\n")
+	tk, err := tokenizer.NewTokenizerFromFS(
+		fstest.MapFS{"vocab.txt": &fstest.MapFile{Data: []byte(crlfData)}}, "vocab.txt", false)
+	if err != nil {
+		t.Fatalf("NewTokenizerFromFS: %v", err)
+	}
+	defer tk.Close()
+
+	const text = "one two three six"
+	if tokens, _ := tk.WordPieceTokenize(text); !reflect.DeepEqual(tokens, []string{"one", "two", "three", "six"}) {
+		t.Errorf("WordPieceTokenize(%q) = %v, want [one two three six]", text, tokens)
+	}
+	if got, want := tk.Encode(text, 8), []int32{2, 5, 6, 7, 10, 3, 0, 0}; !reflect.DeepEqual(got, want) {
+		t.Errorf("Encode(%q, 8) = %v, want %v", text, got, want)
+	}
+}
+
 func TestCloseIsNoOp(t *testing.T) {
 	tk, err := tokenizer.NewTokenizerFromFS(smallVocab(), "vocab.txt", false)
 	if err != nil {

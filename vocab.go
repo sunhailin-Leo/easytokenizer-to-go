@@ -61,8 +61,10 @@ func loadVocabBytes(data []byte, doLowerCase bool) *vocab {
 		ids:    make(map[string]int32, lines),
 		tokens: make([]string, 0, lines),
 	}
-	// Lines are split the way std::getline did: on '\n', keeping a trailing
-	// '\r'. Empty lines are skipped.
+	// Lines are split on '\n' with a trailing '\r' dropped: std::getline saw
+	// the same bytes, because the C++ reader opened the file in text mode and
+	// the runtime folded CRLF into '\n' there. Keeping the '\r' would turn
+	// every token of a CRLF vocabulary into a miss. Empty lines are skipped.
 	for len(s) > 0 {
 		line := s
 		if i := strings.IndexByte(s, '\n'); i >= 0 {
@@ -70,6 +72,7 @@ func loadVocabBytes(data []byte, doLowerCase bool) *vocab {
 		} else {
 			s = ""
 		}
+		line = strings.TrimSuffix(line, "\r")
 		if line == "" {
 			continue
 		}
